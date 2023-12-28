@@ -59,7 +59,7 @@ class App:
 
         label = test(
                 image=self.most_recent_capture_arr,
-                model_dir='D:\Face ID\face-attendance-system\Fraud-Detection-Face-Computer-Vision\Silent-Face-Anti-Spoofing\resources\anti_spoofing\model',
+                model_dir='./Silent-Face-Anti-Spoofing/resources/anti_spoof_models',
                 device_id=0
                 )
 
@@ -82,7 +82,7 @@ class App:
 
         label = test(
                 image=self.most_recent_capture_arr,
-                model_dir='/home/phillip/Desktop/todays_tutorial/27_face_recognition_spoofing/code/face-attendance-system/Silent-Face-Anti-Spoofing/resources/anti_spoof_models',
+                model_dir='./Silent-Face-Anti-Spoofing/resources/anti_spoof_models',
                 device_id=0
                 )
 

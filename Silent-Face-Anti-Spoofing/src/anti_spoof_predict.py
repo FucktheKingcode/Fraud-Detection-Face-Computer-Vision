@@ -7,6 +7,7 @@
 
 import os
 import cv2
+import traceback
 import math
 import torch
 import numpy as np
@@ -27,8 +28,10 @@ MODEL_MAPPING = {
 
 class Detection:
     def __init__(self):
-        caffemodel = "./resources/detection_model/Widerface-RetinaFace.caffemodel"
-        deploy = "./resources/detection_model/deploy.prototxt"
+        stack = traceback.extract_stack()
+        dirname = os.path.dirname(stack[-2].filename)
+        caffemodel = os.path.join(dirname, '..', 'resources', 'detection_model', 'Widerface-RetinaFace.caffemodel')
+        deploy = os.path.join(dirname, '..', 'resources', 'detection_model', 'deploy.prototxt')
         self.detector = cv2.dnn.readNetFromCaffe(deploy, caffemodel)
         self.detector_confidence = 0.6
 
